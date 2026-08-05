@@ -1,0 +1,7 @@
+interface:
+  display_name: "用户研究就绪度审计 V2.2"
+  short_description: "用根因、冲突层级与 BLOCKER 反事实门槛判断研究是否足以继续原型。"
+  default_prompt: "使用用户研究就绪度审计 V2.2，以 compact 模式检查当前材料。先区分证据、分析、决策和假设，再识别冲突层级与根因；九项最低分析包不得机械逐项生成 Issue。每个候选 BLOCKER 必须通过反事实门槛。分别输出原型探索状态、方案收敛状态、研究主张状态和三档总评；暂停当前方案不得自动暂停整个问题方向；保留设计师最终决策权，并校验 Issue 与 Root Cause 引用一致。"
+
+policy:
+  allow_implicit_invocation: true
