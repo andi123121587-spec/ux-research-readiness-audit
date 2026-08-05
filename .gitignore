@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Codex local state and runtime data
+.codex/
+codex-sqlite/
+**/codex-sqlite/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Local benchmark outputs
+benchmark-results/
+baseline-results/
+v22-regression-results/
+runs/
+*.log
+codex-stderr.log
+
+# Temporary and private files
+*.tmp
+*.bak
+*.original-backup
+*.zip
+.env
+.env.*
+__pycache__/
+*.pyc

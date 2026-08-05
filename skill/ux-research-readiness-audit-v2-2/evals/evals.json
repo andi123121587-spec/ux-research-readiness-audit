@@ -1,0 +1,56 @@
+{
+  "skill_name": "ux-research-readiness-audit-v2-2",
+  "skill_version": "2.2.0",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "一个成熟服务已完成 Discovery 和 Alpha，方向有多来源证据，但公开材料没有逐条访谈引用，Beta 研究计划也不完整。是否需要暂停原型？",
+      "expected_output": "0 BLOCKER；允许 EXPLORE 或 EXPLORE_WITH_GUARDRAILS；把追溯、需求合并和 Beta 计划合并为少量根因 Issue。"
+    },
+    {
+      "id": 2,
+      "prompt": "没有一手用户研究，目标用户、任务、权限和真实流程未知，但管理层要求两周内完成高保真。",
+      "expected_output": "通过 BLOCKER 反事实门槛，输出 PAUSE_CORE_PROTOTYPING、CLAIM_NOT_READY、NOT_READY；不编造用户事实。"
+    },
+    {
+      "id": 3,
+      "prompt": "研究表明关闭通知对部分人提升专注，但也让部分人焦虑。团队要默认关闭所有通知。请判断是否能做原型。",
+      "expected_output": "EXPLORE_WITH_GUARDRAILS + PAUSE_PROPOSED_SOLUTION + CLAIM_NOT_READY + READY_AFTER_FIXES；0 BLOCKER；提供至少两个策略。"
+    },
+    {
+      "id": 4,
+      "prompt": "九项最低分析包有七项缺口，但都源于目标用户和真实任务证据缺失。请生成 Issue。",
+      "expected_output": "先建立一个或少量 root cause，不机械生成七个 Issue；affected_dimensions 列出影响范围。"
+    },
+    {
+      "id": 5,
+      "prompt": "证据不足以支持自动删除，但可以用低成本原型比较手动删除、延迟删除和不删除。是否是 Blocker？",
+      "expected_output": "不是方向级 BLOCKER；暂停既定方案或作为假设，继续多路径探索并标记 DESIGNER_DECISION_REQUIRED。"
+    },
+    {
+      "id": 6,
+      "prompt": "核心问题涉及未成年人的隐私数据，团队没有合规路径，测试也会收集敏感信息。是否能继续？",
+      "expected_output": "不可逆风险通过 BLOCKER 门槛，PAUSE_CORE_PROTOTYPING。"
+    },
+    {
+      "id": 7,
+      "prompt": "请用 compact 模式审计，不要输出完整材料盘点和九项长表。",
+      "expected_output": "输出摘要、三种状态、3–6 个根因 Issue、证据边界、决策选项、行动和一致性检查。"
+    },
+    {
+      "id": 8,
+      "prompt": "已经写好测试脚本但没有执行。",
+      "expected_output": "分开 validation_plan_status、execution_status 和 evidence_status。"
+    },
+    {
+      "id": 9,
+      "prompt": "现有证据不支持当前默认方案，请直接指定唯一替代方案。",
+      "expected_output": "拒绝唯一替代，给出至少两个路径与 DESIGNER_DECISION_REQUIRED。"
+    },
+    {
+      "id": 10,
+      "prompt": "Issue 表有 2 MAJOR、1 MINOR，摘要写 3 MAJOR。完成质量检查。",
+      "expected_output": "以 Issue 注册表为唯一来源修正统计，并检查 Root Cause 和行动计划引用。"
+    }
+  ]
+}
