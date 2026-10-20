@@ -24,9 +24,10 @@ This repository contains the stable V2.2 Codex Agent Skill. It helps a UX design
 
 ## Install and invoke
 
-Copy the Skill directory into a project:
+From this repository's root, copy the Skill directory into a project:
 
 ```bash
+mkdir -p your-project/.agents/skills
 cp -R skill/ux-research-readiness-audit-v2-2 \
   your-project/.agents/skills/
 ```
